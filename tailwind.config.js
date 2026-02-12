@@ -1,42 +1,39 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-        "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx}",
-    ],
-    darkMode: 'class',
+    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         extend: {
             colors: {
-                brand: {
-                    black: '#0a0a0a',
-                    dark: '#1c1917',
-                    red: '#E02E2E', // Appetizing Red (Bright & delicious)
-                    redLight: '#FF5757', // Accent Red
-                    gold: '#c5a059', // Elegant Gold
-                    goldLight: '#e6c888',
-                    gray: '#2a2a2a'
+                wa: {
+                    shu: '#c0392b',
+                    beni: '#b91c1c',
+                    enji: '#7f1d1d',
+                    kurenai: '#dc2626',
+                    aka: '#ef4444',
+                    kuro: '#2a0a0a',
+                    kuroDark: '#1f0707',
+                    card: '#3c1212',
+                    cardLight: '#4a1818',
+                    sectionA: '#331010',
+                    sectionB: '#451515',
+                    gold: '#d4af37',
+                    goldLight: '#f5d76e',
+                    cream: '#f5f0e8',
                 }
             },
             fontFamily: {
-                serif: ['"Zen Antique"', '"Noto Serif JP"', 'serif'],
-                sans: ['"Noto Serif JP"', 'sans-serif'],
+                serif: ['"Shippori Mincho"', '"Noto Serif JP"', 'serif'],
+                display: ['"Zen Antique"', '"Shippori Mincho"', 'serif'],
+                western: ['"Cormorant Garamond"', 'serif'],
             },
             animation: {
-                'float': 'float 6s ease-in-out infinite',
-                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                'scale-in': 'scaleIn 0.4s ease-out forwards',
+                'ken-burns': 'kenBurns 20s ease-in-out infinite',
+                'shimmer': 'shimmer 3s ease-in-out infinite',
+                'border-glow': 'borderGlow 2.5s ease-in-out infinite',
+                'glow-pulse': 'glowPulse 3s ease-in-out infinite',
             },
-            keyframes: {
-                float: {
-                    '0%, 100%': { transform: 'translateY(0)' },
-                    '50%': { transform: 'translateY(-10px)' },
-                },
-                fadeInUp: {
-                    '0%': { opacity: '0', transform: 'translateY(20px)' },
-                    '100%': { opacity: '1', transform: 'translateY(0)' },
-                }
-            }
         }
     },
     plugins: [],

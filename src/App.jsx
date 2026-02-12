@@ -16,6 +16,7 @@ import { Game } from './components/features/Game';
 import { Omikuji } from './components/features/Omikuji';
 import { Quiz } from './components/features/Quiz';
 import { ToppingGacha } from './components/features/ToppingGacha';
+import { EmberParticles } from './components/ui/EmberParticles';
 
 const App = () => {
     const [gameActive, setGameActive] = useState(false);
@@ -26,32 +27,72 @@ const App = () => {
     const [modalImage, setModalImage] = useState(null);
 
     const handleNewsClick = (item) => {
-        if (item.action === 'calendar') {
-            setCalendarActive(true);
-        }
+        if (item.action === 'calendar') setCalendarActive(true);
     };
 
     return (
         <React.Fragment>
-            <div className="min-h-screen text-white font-sans max-w-[600px] mx-auto shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-black/30 backdrop-blur-sm">
-                <Header />
-                <main>
-                    <Hero />
-                    <NewSection />
-                    <SubscriptionTeaser />
-                    <LimitedMenuSection onImageClick={setModalImage} />
-                    <NewsSection onNewsClick={handleNewsClick} />
-                    <ChallengeSection />
-                    <ActivitiesSection />
-                    <GameMenuSection
-                        onPlayClick={() => setGameActive(true)}
-                        onOmikujiClick={() => setOmikujiActive(true)}
-                        onQuizClick={() => setQuizActive(true)}
-                        onGachaClick={() => setGachaActive(true)}
-                    />
-                    <RankingSection />
-                </main>
-                <Footer />
+            <div id="top" className="page-bg min-h-screen text-wa-cream font-serif relative">
+                <EmberParticles />
+
+                <div className="w-full max-w-[540px] mx-auto relative z-10 shadow-[0_0_60px_rgba(30,0,0,0.8)]">
+                    <Header />
+                    <main>
+                        <Hero />
+
+                        <div id="new" className="section-a">
+                            <NewSection />
+                        </div>
+
+                        <div className="ichimatsu-divider"></div>
+
+                        <div id="menu" className="section-b">
+                            <LimitedMenuSection onImageClick={setModalImage} />
+                        </div>
+
+                        <div className="ichimatsu-divider"></div>
+
+                        <div id="challenge" className="section-a">
+                            <ChallengeSection />
+                        </div>
+
+                        <div className="ichimatsu-divider"></div>
+
+                        <div className="section-b">
+                            <NewsSection onNewsClick={handleNewsClick} />
+                        </div>
+
+                        <div className="ichimatsu-divider"></div>
+
+                        <div id="activities" className="section-a">
+                            <ActivitiesSection />
+                        </div>
+
+                        <div className="ichimatsu-divider"></div>
+
+                        <div id="games" className="section-b">
+                            <GameMenuSection
+                                onPlayClick={() => setGameActive(true)}
+                                onOmikujiClick={() => setOmikujiActive(true)}
+                                onQuizClick={() => setQuizActive(true)}
+                                onGachaClick={() => setGachaActive(true)}
+                            />
+                        </div>
+
+                        <div className="ichimatsu-divider"></div>
+
+                        <div id="ranking" className="section-a">
+                            <RankingSection />
+                        </div>
+
+                        <div className="ichimatsu-divider"></div>
+
+                        <div className="section-accent">
+                            <SubscriptionTeaser />
+                        </div>
+                    </main>
+                    <Footer />
+                </div>
             </div>
 
             {gameActive && <Game active={gameActive} onClose={() => setGameActive(false)} />}

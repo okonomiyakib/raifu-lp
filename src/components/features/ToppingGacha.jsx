@@ -19,13 +19,25 @@ export const ToppingGacha = ({ active, onClose }) => {
     if (!active) return null;
 
     return (
-        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onClick={onClose}>
-            <div className="bg-brand-gray p-8 rounded-2xl w-full max-w-xs text-center border-4 border-brand-red relative" onClick={e => e.stopPropagation()}>
-                <h3 className="text-white font-bold mb-6 flex items-center justify-center gap-2"><span className="text-2xl">🎰</span> 裏トッピングガチャ</h3>
-                <div className="bg-black p-6 rounded-lg mb-6 min-h-[100px] flex items-center justify-center border-inset border-4 border-gray-800">
-                    <div className={`text-3xl font-black text-brand-gold ${spinning ? 'opacity-50' : 'scale-110'}`}>{result || '?'}</div>
+        <div className="fixed inset-0 z-50 bg-wa-kuro/95 flex items-center justify-center p-4 backdrop-blur-xl" onClick={onClose}>
+            <div className="card-red p-7 w-full max-w-xs text-center relative shadow-2xl" onClick={e => e.stopPropagation()}>
+                <p className="text-wa-gold/50 text-[9px] tracking-[0.4em] font-western uppercase mb-2">Secret Topping</p>
+                <h3 className="text-white font-display font-bold mb-5 flex items-center justify-center gap-2 text-lg">
+                    <span className="text-2xl">🎰</span> 裏トッピングガチャ
+                </h3>
+
+                <div className="bg-wa-kuro/80 p-5 rounded-xl mb-5 min-h-[90px] flex items-center justify-center border border-wa-gold/10">
+                    <div className={`text-3xl font-black font-display transition-all ${spinning ? 'text-white/30 scale-90' : 'text-wa-gold scale-110'}`}>
+                        {result || '？'}
+                    </div>
                 </div>
-                <button onClick={spin} disabled={spinning} className={`w-full py-4 rounded-full font-bold text-lg shadow-lg ${spinning ? 'bg-gray-600 text-gray-400' : 'bg-brand-red text-white hover:scale-105 transition-transform'}`}>{spinning ? '選定中...' : 'ガチャを回す'}</button>
+
+                <button onClick={spin} disabled={spinning}
+                    className={`w-full py-3.5 rounded-full font-bold text-base shadow-lg transition-all ${spinning
+                        ? 'bg-white/5 text-white/30 cursor-not-allowed'
+                        : 'btn-red active:scale-95'}`}>
+                    {spinning ? '選定中...' : 'ガチャを回す'}
+                </button>
             </div>
         </div>
     );

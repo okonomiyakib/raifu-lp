@@ -2,31 +2,180 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════════════════
+   来風 LP — 赤を前面に出した和モダン Design System
+   ═══════════════════════════════════════════════════════ */
+
 @layer base {
-  body {
-    background: linear-gradient(135deg, #700909 0%, #1a0303 100%);
-    background-attachment: fixed;
-    color: #f7f7f7;
-    font-family: 'Noto Serif JP', serif;
-    -webkit-font-smoothing: antialiased;
-  }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+    }
+
+    body {
+        background: #2a0a0a;
+        color: #f5f0e8;
+        font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    ::selection {
+        background: rgba(212, 175, 55, 0.5);
+        color: #fff;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Page Background — はっきりとした深紅
+   ═══════════════════════════════════════════════════════ */
+.page-bg {
+    position: relative;
+    background: linear-gradient(180deg, #2a0a0a 0%, #1f0707 50%, #2a0a0a 100%);
+    min-height: 100vh;
+}
+
+/* 和紙テクスチャ */
+.page-bg::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Section Backgrounds — 赤の濃淡でメリハリ
+   ═══════════════════════════════════════════════════════ */
+.section-a {
+    background: linear-gradient(180deg, #2a0a0a 0%, #331010 50%, #2a0a0a 100%);
+}
+
+.section-b {
+    background: linear-gradient(180deg, #3a1010 0%, #451515 50%, #3a1010 100%);
+}
+
+.section-accent {
+    background: linear-gradient(135deg, #4a1515 0%, #381010 50%, #4a1515 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════
+   市松模様の区切り
+   ═══════════════════════════════════════════════════════ */
+.ichimatsu-divider {
+    height: 6px;
+    background-image: repeating-linear-gradient(90deg,
+            rgba(212, 175, 55, 0.2) 0px, rgba(212, 175, 55, 0.2) 6px,
+            rgba(180, 30, 30, 0.3) 6px, rgba(180, 30, 30, 0.3) 12px);
+}
+
+/* 和風区切り線 */
+.wa-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+}
+
+.wa-divider::before,
+.wa-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+}
+
+/* ═══════════════════════════════════════════════════════
+   Text
+   ═══════════════════════════════════════════════════════ */
+.text-shadow-warm {
+    text-shadow: 0 2px 20px rgba(180, 30, 30, 0.5), 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .text-shadow-gold {
-    text-shadow: 0 2px 10px rgba(197, 160, 89, 0.3);
+    text-shadow: 0 2px 15px rgba(212, 175, 55, 0.3);
 }
 
-.text-shadow-black {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+/* ═══════════════════════════════════════════════════════
+   Gold Shimmer
+   ═══════════════════════════════════════════════════════ */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
 }
 
-.bg-glass {
-    background: rgba(20, 20, 20, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(197, 160, 89, 0.15);
+.gold-shimmer {
+    background: linear-gradient(90deg, #d4af37 0%, #f5d76e 30%, #fff8dc 50%, #f5d76e 70%, #d4af37 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s ease-in-out infinite;
 }
 
+/* ═══════════════════════════════════════════════════════
+   Cards — 赤みの強いカード
+   ═══════════════════════════════════════════════════════ */
+.card {
+    background: rgba(60, 18, 18, 0.85);
+    border: 1px solid rgba(200, 60, 60, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card-gold {
+    background: linear-gradient(135deg, rgba(70, 25, 15, 0.95) 0%, rgba(50, 15, 15, 0.95) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.08);
+}
+
+.card-red {
+    background: linear-gradient(135deg, rgba(80, 18, 18, 0.95) 0%, rgba(55, 12, 12, 0.95) 100%);
+    border: 1px solid rgba(200, 50, 50, 0.25);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Scrollbar
+   ═══════════════════════════════════════════════════════ */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -36,11 +185,13 @@
     scrollbar-width: none;
 }
 
-/* Scroll Reveal Animation Utility */
+/* ═══════════════════════════════════════════════════════
+   Animations
+   ═══════════════════════════════════════════════════════ */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(25px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
@@ -48,6 +199,176 @@
     transform: translateY(0);
 }
 
+@keyframes kenBurns {
+    0% {
+        transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.animate-ken-burns {
+    animation: kenBurns 20s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+    }
+}
+
+.animate-glow-pulse {
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+
+    0%,
+    100% {
+        border-color: rgba(212, 175, 55, 0.2);
+    }
+
+    50% {
+        border-color: rgba(212, 175, 55, 0.5);
+    }
+}
+
+.animate-border-glow {
+    animation: borderGlow 2.5s ease-in-out infinite;
+}
+
 canvas {
     touch-action: none;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Buttons — 赤×金
+   ═══════════════════════════════════════════════════════ */
+.btn-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #e8c84a 50%, #d4af37 100%);
+    color: #2a0a0a;
+    font-weight: 800;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-gold:hover {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn-gold:active {
+    transform: scale(0.97);
+}
+
+.btn-red {
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-red:hover {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn-red:active {
+    transform: scale(0.97);
+}
+
+/* ═══════════════════════════════════════════════════════
+   Section Header — 朱色ライン
+   ═══════════════════════════════════════════════════════ */
+.section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.section-header .shu-accent {
+    width: 4px;
+    height: 48px;
+    background: linear-gradient(180deg, #dc2626, #d4af37);
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.section-header .title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.section-header .title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #d4af37;
+    line-height: 1.2;
+}
+
+.section-header .title-jp {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.15em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Mobile
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 540px) {
+    html {
+        font-size: 15px;
+    }
 }

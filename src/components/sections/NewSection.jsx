@@ -2,32 +2,35 @@ import React from 'react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const NewSection = () => (
-    <section className="px-5 pb-6 pt-0 max-w-lg mx-auto relative z-20 -mt-12">
+    <section className="px-4 pb-8 pt-2 max-w-[540px] mx-auto relative z-20 -mt-8">
         <ScrollReveal>
-            <div className="bg-brand-gray border border-white/10 rounded-xl overflow-hidden shadow-2xl relative group">
-                <div className="absolute top-0 left-0 bg-brand-red text-white text-xs font-black italic px-4 py-1 z-10 rounded-br-xl shadow-lg border-b border-r border-white/10">
-                    NEW
+            <div className="card relative group rounded-2xl overflow-hidden">
+                {/* NEW badge */}
+                <div className="absolute top-0 left-0 z-10">
+                    <div className="bg-wa-kurenai text-white text-xs font-black tracking-wider px-4 py-2 rounded-br-2xl shadow-lg">
+                        🔥 NEW
+                    </div>
                 </div>
-                <a href="https://www.youtube.com/watch?v=kqc_ovsNFRk" target="_blank" rel="noopener noreferrer" className="block w-full aspect-video bg-black relative overflow-hidden group">
-                    <img
-                        src="https://img.youtube.com/vi/kqc_ovsNFRk/hqdefault.jpg"
-                        alt="お好み焼Bチャンネル"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
-                    />
+
+                {/* Video */}
+                <a href="https://www.youtube.com/watch?v=kqc_ovsNFRk" target="_blank" rel="noopener noreferrer" className="block w-full aspect-video bg-black relative overflow-hidden">
+                    <img src="https://img.youtube.com/vi/kqc_ovsNFRk/hqdefault.jpg" alt="お好み焼Bチャンネル" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-8 h-8 ml-1"><path d="M8 5v14l11-7z" /></svg>
+                        <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-7 h-7 ml-1"><path d="M8 5v14l11-7z" /></svg>
                         </div>
                     </div>
-                    <div className="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] px-2 py-0.5 rounded font-mono">
-                        YouTube
+                    <div className="absolute bottom-2.5 right-2.5 bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+                        ▶ YouTube
                     </div>
                 </a>
-                <div className="p-4 bg-gradient-to-t from-brand-black to-brand-gray/90 backdrop-blur-sm">
-                    <h3 className="text-white font-bold text-sm flex items-center gap-2">
-                        <span className="text-brand-gold">📺</span> お好み焼Bチャンネル～目指せ海外展開～
+
+                {/* Info */}
+                <div className="p-4">
+                    <h3 className="text-white font-bold text-sm flex items-center gap-2 font-serif mb-1">
+                        📺 お好み焼Bチャンネル～目指せ海外展開～
                     </h3>
-                    <p className="text-white/50 text-xs mt-1">最新の動画をチェックしてね！</p>
+                    <p className="text-white/50 text-xs">最新の動画をチェックしてね！</p>
                 </div>
             </div>
         </ScrollReveal>

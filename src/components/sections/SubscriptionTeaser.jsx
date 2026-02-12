@@ -2,27 +2,35 @@ import React from 'react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const SubscriptionTeaser = () => (
-    <section className="px-5 py-10 max-w-lg mx-auto relative overflow-hidden my-4">
+    <section className="px-4 py-12 max-w-[540px] mx-auto relative overflow-hidden">
         <ScrollReveal>
-            <div className="bg-gradient-to-r from-brand-black via-brand-red/20 to-brand-black border-y border-brand-gold/30 py-8 px-4 text-center relative group">
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-50"></div>
+            <div className="relative py-10 px-6 text-center bg-[#4a1515]/30 rounded-2xl border border-wa-kurenai/15">
+                {/* 朱赤の角飾り */}
+                <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-wa-kurenai/70"></div>
+                <div className="absolute top-0 right-0 w-10 h-10 border-t-2 border-r-2 border-wa-kurenai/70"></div>
+                <div className="absolute bottom-0 left-0 w-10 h-10 border-b-2 border-l-2 border-wa-kurenai/70"></div>
+                <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-wa-kurenai/70"></div>
 
-                <div className="inline-block bg-brand-gold text-brand-black text-[10px] font-black px-2 py-0.5 rounded mb-3 tracking-widest transform -rotate-2">
-                    COMING SOON...
+                <div className="inline-block mb-5">
+                    <span className="bg-wa-kurenai text-white text-[11px] font-black px-5 py-1.5 rounded-full tracking-[0.15em] uppercase shadow-md">
+                        Coming Soon
+                    </span>
                 </div>
 
-                <h2 className="text-xl md:text-2xl font-serif font-black text-white leading-relaxed mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
-                    <span className="block text-sm text-brand-gold mb-1 font-sans font-normal">世界初！？</span>
+                <p className="text-wa-kurenai font-bold text-sm mb-2 tracking-wider">世界初！？</p>
+                <h2 className="text-2xl font-display font-black text-white leading-relaxed mb-2">
                     お好み焼きの<br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-white to-brand-gold animate-pulse-slow">月額課金</span>
+                    <span className="gold-shimmer text-4xl leading-[1.5]">月額課金</span>
                     ？<br />
-                    プロジェクト始動予定
+                    <span className="text-xl">プロジェクト始動予定</span>
                 </h2>
 
-                <div className="w-16 h-[2px] bg-brand-red mx-auto my-4"></div>
+                <div className="wa-divider my-5">
+                    <span className="text-wa-kurenai text-xs">◆</span>
+                </div>
 
-                <p className="text-white/60 text-xs tracking-wider">
-                    PROJECT STARTING SOON
+                <p className="text-white/40 text-xs tracking-[0.2em] font-western uppercase">
+                    Project Starting Soon
                 </p>
             </div>
         </ScrollReveal>
