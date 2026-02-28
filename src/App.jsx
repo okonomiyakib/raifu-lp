@@ -10,6 +10,7 @@ import { ActivitiesSection } from './components/sections/ActivitiesSection';
 import { GameMenuSection } from './components/sections/GameMenuSection';
 import { RankingSection } from './components/sections/RankingSection';
 import { Footer } from './components/sections/Footer';
+import { TeamSection } from './components/sections/TeamSection';
 import { ImageModal } from './components/features/ImageModal';
 import { CalendarModal } from './components/features/CalendarModal';
 import { Game } from './components/features/Game';
@@ -32,10 +33,10 @@ const App = () => {
 
     return (
         <React.Fragment>
-            <div id="top" className="page-bg min-h-screen text-wa-cream font-serif relative">
+            <div id="top" className="page-bg min-h-screen text-[#fce8e8] font-sans relative">
                 <EmberParticles />
 
-                <div className="w-full max-w-[540px] mx-auto relative z-10 shadow-[0_0_60px_rgba(30,0,0,0.8)]">
+                <div className="w-full max-w-[540px] mx-auto relative z-10 shadow-[0_0_60px_rgba(0,0,0,0.3)]">
                     <Header />
                     <main>
                         <Hero />
@@ -89,6 +90,12 @@ const App = () => {
 
                         <div className="section-accent">
                             <SubscriptionTeaser />
+                        </div>
+
+                        <div className="ichimatsu-divider"></div>
+
+                        <div id="team" className="section-b">
+                            <TeamSection />
                         </div>
                     </main>
                     <Footer />

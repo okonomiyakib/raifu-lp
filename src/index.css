@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════
-   来風 LP — 赤を前面に出した和モダン Design System
+   来風 LP — RED BASE WARM THEME v5
    ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
 
@@ -22,16 +24,16 @@
     }
 
     body {
-        background: #2a0a0a;
-        color: #f5f0e8;
-        font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+        background: #2b1215;
+        color: #fce8e8;
+        font-family: 'Inter', 'Shippori Mincho', sans-serif;
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
         -webkit-tap-highlight-color: transparent;
     }
 
     ::selection {
-        background: rgba(212, 175, 55, 0.5);
+        background: rgba(255, 100, 100, 0.4);
         color: #fff;
     }
 
@@ -42,52 +44,63 @@
 }
 
 /* ═══════════════════════════════════════════════════════
-   Page Background — はっきりとした深紅
+   Page Background — Deep warm red
    ═══════════════════════════════════════════════════════ */
 .page-bg {
     position: relative;
-    background: linear-gradient(180deg, #2a0a0a 0%, #1f0707 50%, #2a0a0a 100%);
+    background: linear-gradient(180deg, #2b1215 0%, #301418 50%, #2b1215 100%);
     min-height: 100vh;
 }
 
-/* 和紙テクスチャ */
 .page-bg::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
     pointer-events: none;
     z-index: 0;
 }
 
 /* ═══════════════════════════════════════════════════════
-   Section Backgrounds — 赤の濃淡でメリハリ
+   Section Backgrounds
    ═══════════════════════════════════════════════════════ */
 .section-a {
-    background: linear-gradient(180deg, #2a0a0a 0%, #331010 50%, #2a0a0a 100%);
+    background: linear-gradient(180deg, #2b1215 0%, #321619 50%, #2b1215 100%);
 }
 
 .section-b {
-    background: linear-gradient(180deg, #3a1010 0%, #451515 50%, #3a1010 100%);
+    background: linear-gradient(180deg, #301418 0%, #381a1e 50%, #301418 100%);
 }
 
 .section-accent {
-    background: linear-gradient(135deg, #4a1515 0%, #381010 50%, #4a1515 100%);
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    background: linear-gradient(135deg, #3d1a1e 0%, #451e22 50%, #3d1a1e 100%);
+    border-top: 1px solid rgba(255, 120, 120, 0.15);
+    border-bottom: 1px solid rgba(255, 120, 120, 0.15);
 }
 
 /* ═══════════════════════════════════════════════════════
-   市松模様の区切り
+   Divider
    ═══════════════════════════════════════════════════════ */
 .ichimatsu-divider {
-    height: 6px;
-    background-image: repeating-linear-gradient(90deg,
-            rgba(212, 175, 55, 0.2) 0px, rgba(212, 175, 55, 0.2) 6px,
-            rgba(180, 30, 30, 0.3) 6px, rgba(180, 30, 30, 0.3) 12px);
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 100, 100, 0.25) 20%, rgba(255, 80, 80, 0.5) 50%, rgba(255, 100, 100, 0.25) 80%, transparent 100%);
+    position: relative;
 }
 
-/* 和風区切り線 */
+.ichimatsu-divider::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 80, 80, 0.08) 20%, rgba(255, 80, 80, 0.15) 50%, rgba(255, 80, 80, 0.08) 80%, transparent 100%);
+    filter: blur(4px);
+}
+
 .wa-divider {
     display: flex;
     align-items: center;
@@ -101,22 +114,18 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 120, 120, 0.3), transparent);
 }
 
 /* ═══════════════════════════════════════════════════════
    Text
    ═══════════════════════════════════════════════════════ */
 .text-shadow-warm {
-    text-shadow: 0 2px 20px rgba(180, 30, 30, 0.5), 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-.text-shadow-gold {
-    text-shadow: 0 2px 15px rgba(212, 175, 55, 0.3);
+    text-shadow: 0 2px 20px rgba(255, 60, 60, 0.3);
 }
 
 /* ═══════════════════════════════════════════════════════
-   Gold Shimmer
+   Red Shimmer
    ═══════════════════════════════════════════════════════ */
 @keyframes shimmer {
     0% {
@@ -129,7 +138,7 @@
 }
 
 .gold-shimmer {
-    background: linear-gradient(90deg, #d4af37 0%, #f5d76e 30%, #fff8dc 50%, #f5d76e 70%, #d4af37 100%);
+    background: linear-gradient(90deg, #ff6b6b 0%, #ffa8a8 30%, #fff 50%, #ffa8a8 70%, #ff6b6b 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -138,20 +147,20 @@
 }
 
 /* ═══════════════════════════════════════════════════════
-   Cards — 赤みの強いカード
+   Cards
    ═══════════════════════════════════════════════════════ */
 .card {
-    background: rgba(60, 18, 18, 0.85);
-    border: 1px solid rgba(200, 60, 60, 0.15);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover {
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: rgba(255, 120, 120, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 30px rgba(255, 60, 60, 0.1);
 }
 
 .card:active {
@@ -159,16 +168,16 @@
 }
 
 .card-gold {
-    background: linear-gradient(135deg, rgba(70, 25, 15, 0.95) 0%, rgba(50, 15, 15, 0.95) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 120, 120, 0.15);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.08);
+    box-shadow: 0 0 20px rgba(255, 60, 60, 0.06);
 }
 
 .card-red {
-    background: linear-gradient(135deg, rgba(80, 18, 18, 0.95) 0%, rgba(55, 12, 12, 0.95) 100%);
-    border: 1px solid rgba(200, 50, 50, 0.25);
+    background: linear-gradient(135deg, rgba(255, 80, 80, 0.08) 0%, rgba(255, 60, 60, 0.04) 100%);
+    border: 1px solid rgba(255, 120, 120, 0.15);
     border-radius: 16px;
     overflow: hidden;
 }
@@ -186,12 +195,49 @@
 }
 
 /* ═══════════════════════════════════════════════════════
+   Section Nav Tags
+   ═══════════════════════════════════════════════════════ */
+.section-nav {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 0 4px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.section-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.section-nav-tag {
+    white-space: nowrap;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.section-nav-tag:hover,
+.section-nav-tag:active {
+    background: rgba(255, 80, 80, 0.25);
+    color: #fff;
+    border-color: rgba(255, 100, 100, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════
    Animations
    ═══════════════════════════════════════════════════════ */
 .reveal {
     opacity: 0;
-    transform: translateY(25px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(30px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
@@ -253,11 +299,11 @@
 
     0%,
     100% {
-        box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+        box-shadow: 0 0 15px rgba(255, 80, 80, 0.15);
     }
 
     50% {
-        box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+        box-shadow: 0 0 30px rgba(255, 80, 80, 0.3);
     }
 }
 
@@ -269,11 +315,11 @@
 
     0%,
     100% {
-        border-color: rgba(212, 175, 55, 0.2);
+        border-color: rgba(255, 120, 120, 0.15);
     }
 
     50% {
-        border-color: rgba(212, 175, 55, 0.5);
+        border-color: rgba(255, 120, 120, 0.4);
     }
 }
 
@@ -281,16 +327,40 @@
     animation: borderGlow 2.5s ease-in-out infinite;
 }
 
+@keyframes neonPulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
 canvas {
     touch-action: none;
 }
 
 /* ═══════════════════════════════════════════════════════
-   Buttons — 赤×金
+   Buttons
    ═══════════════════════════════════════════════════════ */
 .btn-gold {
-    background: linear-gradient(135deg, #d4af37 0%, #e8c84a 50%, #d4af37 100%);
-    color: #2a0a0a;
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #dc2626 100%);
+    color: #fff;
     font-weight: 800;
     border: none;
     transition: all 0.3s ease;
@@ -298,7 +368,7 @@ canvas {
 }
 
 .btn-gold:hover {
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 4px 25px rgba(255, 60, 60, 0.4);
     filter: brightness(1.1);
 }
 
@@ -316,7 +386,7 @@ canvas {
 }
 
 .btn-red:hover {
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+    box-shadow: 0 4px 20px rgba(255, 60, 60, 0.35);
 }
 
 .btn-red:active {
@@ -324,7 +394,7 @@ canvas {
 }
 
 /* ═══════════════════════════════════════════════════════
-   Section Header — 朱色ライン
+   Section Header
    ═══════════════════════════════════════════════════════ */
 .section-header {
     display: flex;
@@ -336,10 +406,11 @@ canvas {
 .section-header .shu-accent {
     width: 4px;
     height: 48px;
-    background: linear-gradient(180deg, #dc2626, #d4af37);
+    background: linear-gradient(180deg, #ef4444, rgba(255, 80, 80, 0));
     border-radius: 2px;
     flex-shrink: 0;
     margin-top: 4px;
+    box-shadow: 0 0 10px rgba(255, 80, 80, 0.4);
 }
 
 .section-header .title-group {
@@ -349,19 +420,21 @@ canvas {
 }
 
 .section-header .title-en {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Orbitron', 'Inter', sans-serif;
     font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: #d4af37;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #ff8a8a;
     line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .section-header .title-jp {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Inter', 'Shippori Mincho', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255, 200, 200, 0.5);
     letter-spacing: 0.15em;
+    font-weight: 400;
 }
 
 /* ═══════════════════════════════════════════════════════

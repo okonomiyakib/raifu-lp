@@ -8,71 +8,66 @@ export const EmberParticles = () => {
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
         let animId;
-        const embers = [];
-        const MAX = 25;
+        const particles = [];
+        const MAX = 30;
 
-        const resize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        };
+        const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
         resize();
         window.addEventListener('resize', resize);
 
         for (let i = 0; i < MAX; i++) {
-            embers.push({
+            particles.push({
                 x: Math.random() * canvas.width,
-                y: canvas.height + Math.random() * 200,
-                size: Math.random() * 3 + 1,
-                speedY: Math.random() * 0.8 + 0.3,
-                speedX: (Math.random() - 0.5) * 0.4,
-                opacity: Math.random() * 0.5 + 0.2,
-                life: Math.random(),
-                // 赤〜オレンジ〜金のランダム色
-                hue: Math.random() * 40 + 10, // 10-50 (赤〜オレンジ〜金)
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2 + 0.5,
+                speedY: (Math.random() - 0.5) * 0.25,
+                speedX: (Math.random() - 0.5) * 0.25,
+                opacity: Math.random() * 0.4 + 0.1,
+                life: Math.random() * Math.PI * 2,
+                isRed: Math.random() > 0.3,
             });
         }
 
         const draw = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            embers.forEach(e => {
-                e.y -= e.speedY;
-                e.x += e.speedX + Math.sin(e.life * 3) * 0.2;
-                e.life += 0.005;
-                e.opacity = Math.sin(e.life * Math.PI) * 0.5;
 
-                if (e.y < -20 || e.opacity <= 0) {
-                    e.y = canvas.height + 20;
-                    e.x = Math.random() * canvas.width;
-                    e.life = 0;
-                    e.opacity = 0.3;
+            particles.forEach((a, i) => {
+                particles.slice(i + 1).forEach(b => {
+                    const dx = a.x - b.x, dy = a.y - b.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 130) {
+                        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+                        ctx.strokeStyle = `rgba(255, 100, 100, ${(1 - dist / 130) * 0.06})`;
+                        ctx.lineWidth = 0.5; ctx.stroke();
+                    }
+                });
+            });
+
+            particles.forEach(p => {
+                p.x += p.speedX; p.y += p.speedY;
+                p.life += 0.01;
+                p.opacity = (Math.sin(p.life) * 0.3 + 0.3);
+                if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
+                if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
+
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = p.isRed
+                    ? `rgba(255, 100, 100, ${p.opacity * 0.5})`
+                    : `rgba(255, 200, 200, ${p.opacity * 0.2})`;
+                ctx.fill();
+
+                if (p.isRed) {
+                    ctx.beginPath(); ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 80, 80, ${p.opacity * 0.06})`;
+                    ctx.fill();
                 }
-
-                ctx.beginPath();
-                ctx.arc(e.x, e.y, e.size, 0, Math.PI * 2);
-                ctx.fillStyle = `hsla(${e.hue}, 90%, 55%, ${e.opacity})`;
-                ctx.fill();
-
-                // グロー効果
-                ctx.beginPath();
-                ctx.arc(e.x, e.y, e.size * 3, 0, Math.PI * 2);
-                ctx.fillStyle = `hsla(${e.hue}, 90%, 55%, ${e.opacity * 0.15})`;
-                ctx.fill();
             });
             animId = requestAnimationFrame(draw);
         };
         draw();
 
-        return () => {
-            cancelAnimationFrame(animId);
-            window.removeEventListener('resize', resize);
-        };
+        return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize); };
     }, []);
 
-    return (
-        <canvas
-            ref={canvasRef}
-            className="fixed inset-0 z-[1] pointer-events-none"
-            style={{ opacity: 0.7 }}
-        />
-    );
+    return <canvas ref={canvasRef} className="fixed inset-0 z-[1] pointer-events-none" style={{ opacity: 0.8 }} />;
 };
