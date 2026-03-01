@@ -36,6 +36,7 @@ export const Header = () => {
         { label: 'プロジェクト', href: '#activities' },
         { label: 'ゲーム', href: '#games' },
         { label: 'ランキング', href: '#ranking' },
+        { label: '投稿', href: '#posts' },
         { label: 'チーム', href: '#team' },
     ];
 
@@ -108,8 +109,8 @@ export const Header = () => {
                     </button>
                 </div>
 
-                {/* セクションナビタグ — スクロール時のみ表示 */}
-                <div className={`transition-all duration-500 overflow-hidden pointer-events-auto ${scrolled ? 'max-h-12 opacity-100' : 'max-h-0 opacity-0'}`}>
+                {/* セクションナビタグ — 常時表示 */}
+                <div className="transition-all duration-500 overflow-hidden pointer-events-auto max-h-12 opacity-100">
                     <div className="section-nav px-4 pb-2.5">
                         {sectionTags.map((tag, i) => (
                             <button key={i} onClick={() => handleNavClick(tag.href)} className="section-nav-tag">

@@ -30,27 +30,6 @@ export const ChallengeSection = () => (
                         <div className="absolute -top-3 -left-1">
                             <span className="bg-red-600 text-white text-sm font-black px-4 py-1 rounded-lg shadow-md inline-block transform -rotate-2 font-display tracking-wider">LV.1</span>
                         </div>
-                        <h4 className="text-base font-bold text-white mb-2 pt-3">おこビー検索ミッション</h4>
-                        <p className="text-sm text-white/65 mb-3 leading-relaxed">
-                            ブラウザゲーム<span className="text-red-400 font-bold">『にんぷち』</span>の中で、お好み焼きを持った「おこビー」のスクショを撮ってLINEに投稿！
-                        </p>
-                        <div className="text-center my-3">
-                            <a href="https://www.cryptofantasy.net/ninjapetit/" target="_blank" rel="noopener noreferrer" className="btn-gold inline-flex items-center gap-2 py-2.5 px-6 rounded-xl shadow-lg text-sm">
-                                🎮 『にんぷち』はこちら
-                            </a>
-                        </div>
-                        <p className="text-[10px] text-white/25 mb-2 text-right">※にんぷちはPC推奨</p>
-                        <div className="text-right">
-                            <span className="reward-sparkle">
-                                <span className="reward-sparkle-text">🏆 報酬：肉玉そば半額券 1枚</span>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="bg-white/[0.04] rounded-xl p-4 border border-white/[0.06] relative">
-                        <div className="absolute -top-3 -left-1">
-                            <span className="bg-gradient-to-r from-red-600 to-red-500 text-white text-sm font-black px-4 py-1 rounded-lg shadow-md inline-block transform -rotate-2 font-display tracking-wider">LV.2</span>
-                        </div>
                         <h4 className="text-base font-bold text-white mb-2 pt-3">全ステージ制覇ミッション</h4>
                         <p className="text-sm text-white/65 mb-3 leading-relaxed">
                             <span className="text-red-400 font-bold">『にんぷち』</span>または<span className="text-red-400 font-bold">『CNPバーニンウォーズ』</span>を全クリアしてスクショを投稿！
@@ -65,6 +44,27 @@ export const ChallengeSection = () => (
                         <div className="text-right">
                             <span className="reward-sparkle">
                                 <span className="reward-sparkle-text">🏆 報酬：肉玉そば半額券 1枚~</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="bg-white/[0.04] rounded-xl p-4 border border-white/[0.06] relative">
+                        <div className="absolute -top-3 -left-1">
+                            <span className="bg-gradient-to-r from-red-600 to-red-500 text-white text-sm font-black px-4 py-1 rounded-lg shadow-md inline-block transform -rotate-2 font-display tracking-wider">LV.2</span>
+                        </div>
+                        <h4 className="text-base font-bold text-white mb-2 pt-3">おこビー検索ミッション</h4>
+                        <p className="text-sm text-white/65 mb-3 leading-relaxed">
+                            ブラウザゲーム<span className="text-red-400 font-bold">『にんぷち』</span>の中で、お好み焼きを持った「おこビー」のスクショを撮ってLINEに投稿！
+                        </p>
+                        <div className="text-center my-3">
+                            <a href="https://www.cryptofantasy.net/ninjapetit/" target="_blank" rel="noopener noreferrer" className="btn-gold inline-flex items-center gap-2 py-2.5 px-6 rounded-xl shadow-lg text-sm">
+                                🎮 『にんぷち』はこちら
+                            </a>
+                        </div>
+                        <p className="text-[10px] text-white/25 mb-2 text-right">※にんぷちはPC推奨</p>
+                        <div className="text-right">
+                            <span className="reward-sparkle">
+                                <span className="reward-sparkle-text">🏆 報酬：肉玉そば半額券 1枚</span>
                             </span>
                         </div>
                     </div>

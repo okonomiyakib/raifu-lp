@@ -11,6 +11,8 @@ import { GameMenuSection } from './components/sections/GameMenuSection';
 import { RankingSection } from './components/sections/RankingSection';
 import { Footer } from './components/sections/Footer';
 import { TeamSection } from './components/sections/TeamSection';
+import { UserPostsSection } from './components/sections/UserPostsSection';
+import { PostForm } from './components/features/PostForm';
 import { ImageModal } from './components/features/ImageModal';
 import { CalendarModal } from './components/features/CalendarModal';
 import { Game } from './components/features/Game';
@@ -25,6 +27,7 @@ const App = () => {
     const [quizActive, setQuizActive] = useState(false);
     const [gachaActive, setGachaActive] = useState(false);
     const [calendarActive, setCalendarActive] = useState(false);
+    const [postFormActive, setPostFormActive] = useState(false);
     const [modalImage, setModalImage] = useState(null);
 
     const handleNewsClick = (item) => {
@@ -88,6 +91,12 @@ const App = () => {
 
                         <div className="ichimatsu-divider"></div>
 
+                        <div className="section-b">
+                            <UserPostsSection onPostClick={() => setPostFormActive(true)} />
+                        </div>
+
+                        <div className="ichimatsu-divider"></div>
+
                         <div className="section-accent">
                             <SubscriptionTeaser />
                         </div>
@@ -107,6 +116,7 @@ const App = () => {
             <Quiz active={quizActive} onClose={() => setQuizActive(false)} />
             <ToppingGacha active={gachaActive} onClose={() => setGachaActive(false)} />
             <CalendarModal active={calendarActive} onClose={() => setCalendarActive(false)} />
+            <PostForm active={postFormActive} onClose={() => setPostFormActive(false)} />
             <ImageModal src={modalImage} onClose={() => setModalImage(null)} />
         </React.Fragment>
     );
