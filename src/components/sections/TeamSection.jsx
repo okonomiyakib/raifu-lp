@@ -55,7 +55,7 @@ const MemberCard = ({ member, index }) => {
                 style={{ background: `radial-gradient(ellipse at center, ${style.glow} 0%, transparent 70%)` }}
             />
 
-            <div className={`relative flex flex-col items-center text-center p-6 rounded-2xl
+            <div className={`relative flex flex-col items-center text-center p-8 sm:p-10 rounded-2xl
                 bg-white/[0.05] border border-white/[0.08]
                 group-hover:bg-white/[0.1]
                 transition-all duration-500 group-active:scale-[0.97]`}
@@ -87,7 +87,7 @@ const MemberCard = ({ member, index }) => {
                     />
 
                     {/* メインアイコン — ホバーで色が変わるボーダー */}
-                    <div className="relative w-28 h-28 rounded-full overflow-hidden border-3 border-white/15
+                    <div className="relative w-44 h-44 rounded-full overflow-hidden border-3 border-white/15
                         transition-all duration-500
                         shadow-xl"
                         style={{
@@ -105,7 +105,7 @@ const MemberCard = ({ member, index }) => {
                     </div>
 
                     {/* Xバッジ */}
-                    <div className="absolute -bottom-1 -right-1 w-9 h-9 rounded-xl flex items-center justify-center z-10
+                    <div className="absolute -bottom-1 -right-1 w-11 h-11 rounded-xl flex items-center justify-center z-10
                         bg-[#333] border-2 border-[#2b1215] shadow-md
                         group-hover:shadow-lg transition-all duration-500"
                         style={{
@@ -113,23 +113,23 @@ const MemberCard = ({ member, index }) => {
                             boxShadow: hovered ? `0 0 15px ${style.shadow}` : undefined,
                         }}
                     >
-                        <IconXSNS className="w-4 h-4 text-white" />
+                        <IconXSNS className="w-5 h-5 text-white" />
                     </div>
                 </div>
 
                 {/* 名前 — ホバーで色が変わる */}
-                <h3 className={`text-lg font-bold tracking-wider mb-1 transition-colors duration-500 ${hovered ? style.name : 'text-white'}`}>
+                <h3 className={`text-2xl font-bold tracking-wider mb-2 transition-colors duration-500 ${hovered ? style.name : 'text-white'}`}>
                     {member.name}
                 </h3>
 
                 {/* 役割 */}
-                <p className="text-white/40 text-[11px] leading-relaxed tracking-wide mb-3
+                <p className="text-white/40 text-sm leading-relaxed tracking-wide mb-4
                     group-hover:text-white/60 transition-colors duration-500">
                     {member.role}
                 </p>
 
                 {/* CTA */}
-                <div className="flex items-center gap-2 text-[10px] text-white/20
+                <div className="flex items-center gap-2 text-xs text-white/20
                     group-hover:text-white/50 transition-all duration-500 font-display tracking-[0.15em] uppercase">
                     <div className="w-4 h-px bg-current" />
                     Follow
@@ -177,7 +177,7 @@ export const TeamSection = () => {
                 <p className="text-white/25 text-xs mb-10 ml-4 tracking-wider font-light">来風プロジェクトを支えるチーム</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-6">
                 {teamMembers.map((member, index) => (
                     <MemberCard key={index} member={member} index={index} />
                 ))}

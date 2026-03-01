@@ -41,7 +41,9 @@ export const ChallengeSection = () => (
                         </div>
                         <p className="text-[10px] text-white/25 mb-2 text-right">※にんぷちはPC推奨</p>
                         <div className="text-right">
-                            <span className="inline-block bg-red-600/20 border border-red-500/25 text-red-300 px-4 py-1.5 rounded-lg text-sm font-bold">報酬：肉玉そば半額券 1枚</span>
+                            <span className="reward-sparkle">
+                                <span className="reward-sparkle-text">🏆 報酬：肉玉そば半額券 1枚</span>
+                            </span>
                         </div>
                     </div>
 
@@ -61,7 +63,9 @@ export const ChallengeSection = () => (
                         <p className="text-[10px] text-white/25 mb-2 text-right">※にんぷちはPC推奨</p>
                         <p className="text-sm text-red-400 mb-3 text-center font-black">★ 両方クリアなら2枚ゲット！ ★</p>
                         <div className="text-right">
-                            <span className="inline-block bg-red-600/20 border border-red-500/25 text-red-300 px-4 py-1.5 rounded-lg text-sm font-bold">報酬：肉玉そば半額券 1枚~</span>
+                            <span className="reward-sparkle">
+                                <span className="reward-sparkle-text">🏆 報酬：肉玉そば半額券 1枚~</span>
+                            </span>
                         </div>
                     </div>
                 </div>

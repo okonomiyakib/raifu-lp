@@ -1,12 +1,12 @@
 export const NEWS_ITEMS = [
     { id: 100, title: 'にんケットプチin岡山', desc: '3月14日開催決定！サークル＆スポンサー募集スタート', date: '2026.03.14', category: 'EVENT', image: './assets/ninket_event.jpg', url: 'https://x.com/SHACK_SAME_SAME/status/2001405654314160590?s=20' },
     { id: 102, title: '【協力お願い】0円から応援！共創プロジェクト', desc: '「得意」を披露し、副業や学びへ。大人も子供も共に成長できる、新しい飲食店のカタチを一緒に作りませんか？', date: '2026.02.05', category: 'PROJECT', image: './assets/crowdfunding.jpg', url: 'https://financie.jp/users/okonomiyakib' },
-    { id: 107, title: '【2/18 & 2/25】トークイベント＆スナックライ夫婦', desc: '18日はクリプト・NinjaDAOを語る会、25日は第2回スナックライ夫婦（子ども食堂・飲食店の未来を語ろう！）詳細はこちら', date: '2026.02.18', category: 'EVENT', image: './assets/event_talk_snack.jpg', url: 'https://x.com/raifu_0405/status/2019285082813726976?s=20' },
+
     { id: 104, title: '【金曜夜】大人の隠れ家 CNPトレカCafe&Bar', desc: '初回チャージ無料！(2回目〜500円) 食べて遊んで楽しい金曜の夜を🤩', date: '2026.02.05', category: 'EVENT', image: './assets/tcg_bar_exterior.jpg', url: 'https://x.com/raifu_0405/status/2019248190072238220?s=20' },
     { id: 106, title: '【2/15開催】みんなのらいふ食堂', desc: 'クッキーにおえかきしよう！自分だけのクッキーを作ろう★ みんな無料！詳細はこちら', date: '2026.02.15', category: 'EVENT', image: './assets/kodomo_shokudo_2_15.jpg', url: 'https://x.com/raifu_0405/status/2019280863645823349?s=20' },
     { id: 108, title: '最強のポイントサイト爆誕🔥🔥', desc: '日常のオンラインショッピングをお得に！紹介コード「TMIshImJtbX」', date: '2026.02.05', category: 'RECOMMEND', image: './assets/point_site_promo.jpg', url: 'https://x.com/raifu_0405/status/2016363433760063547?s=20' },
     { id: 105, title: '【募集】みんなで創る新しいお店のカタチ', desc: '「得意」を活かして副業や学びへ。ただ食べる場所を超えた、ワクワクする空間を一緒に作りませんか？お問い合わせは各SNSのDMからどうぞ！', date: '2026.02.05', category: 'RECRUIT', image: './assets/skill_share.jpg', url: 'https://x.com/raifu_0405/status/2019277080241082509?s=20' },
-    { id: 103, title: '2月度 営業カレンダー', desc: 'タップして拡大表示。お休みの確認はこちら。', date: '2026.02.01', category: 'INFO', image: './assets/calendar_2026_02.jpg', action: 'calendar' },
+    { id: 103, title: '3月度 営業カレンダー', desc: 'タップして拡大表示。お休みの確認はこちら。', date: '2026.03.01', category: 'INFO', image: './assets/calendar_2026_03.jpg', action: 'calendar' },
     { id: 101, title: '定期開催！CNPトレカ交流会', desc: '毎週金曜・日曜開催！初心者の方も大歓迎♪', date: '2026.02.05', category: 'EVENT', image: './assets/cnp_regular_event.png', url: 'https://x.com/raifu_0405/status/2019238615709360368?s=20' },
     { id: 109, title: 'キッチンカーで開業したい方必見👀', desc: 'IPとのコラボで唯一無二のキッチンカー作りませんか？詳細はこちら', date: '2026.02.05', category: 'BUSINESS', image: './assets/kitchen_car_promo.jpg', url: 'https://x.com/ryos50161232/status/2014638051134427416?s=20' },
 ];

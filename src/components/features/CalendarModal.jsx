@@ -11,7 +11,7 @@ export const CalendarModal = ({ active, onClose }) => {
                         <IconX size={14} /> Close
                     </div>
                 </button>
-                <img src="./assets/calendar_2026_02.jpg" alt="営業カレンダー" className="w-full h-auto rounded-xl shadow-2xl border border-wa-gold/15" />
+                <img src="./assets/calendar_2026_03.jpg" alt="営業カレンダー" className="w-full h-auto rounded-xl shadow-2xl border border-wa-gold/15" />
             </div>
         </div>
     );
