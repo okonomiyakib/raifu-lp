@@ -8,7 +8,7 @@ export const NEWS_ITEMS = [
     { id: 105, title: '【募集】みんなで創る新しいお店のカタチ', desc: '「得意」を活かして副業や学びへ。ただ食べる場所を超えた、ワクワクする空間を一緒に作りませんか？お問い合わせは各SNSのDMからどうぞ！', date: '2026.02.05', category: 'RECRUIT', image: './assets/skill_share.jpg', url: 'https://x.com/raifu_0405/status/2019277080241082509?s=20' },
     { id: 103, title: '3月度 営業カレンダー', desc: 'タップして拡大表示。お休みの確認はこちら。', date: '2026.03.01', category: 'INFO', image: './assets/calendar_2026_03.jpg', action: 'calendar' },
     { id: 101, title: '定期開催！CNPトレカ交流会', desc: '毎週金曜・日曜開催！初心者の方も大歓迎♪', date: '2026.02.05', category: 'EVENT', image: './assets/cnp_regular_event.png', url: 'https://x.com/raifu_0405/status/2019238615709360368?s=20' },
-    { id: 109, title: 'キッチンカーで開業したい方必見👀', desc: 'IPとのコラボで唯一無二のキッチンカー作りませんか？詳細はこちら', date: '2026.02.05', category: 'BUSINESS', image: './assets/kitchen_car_promo.jpg', url: 'https://x.com/ryos50161232/status/2014638051134427416?s=20' },
+    { id: 109, title: 'キッチンカーで開業したい方必見👀', desc: 'IPとのコラボで唯一無二のキッチンカー作りませんか？詳細はこちら', date: '2026.02.05', category: 'BUSINESS', image: './assets/kitchen_car_promo.jpg', url: 'https://x.com/ryos50161232/status/2022116845785108717?s=20' },
 ];
 
 export const RANKING_DATA = [

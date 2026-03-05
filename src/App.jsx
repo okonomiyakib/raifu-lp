@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Header } from './components/sections/Header';
 import { Hero } from './components/sections/Hero';
 import { NewSection } from './components/sections/NewSection';
+import { DesignGalleryModal } from './components/sections/DesignGallerySection';
 import { SubscriptionTeaser } from './components/sections/SubscriptionTeaser';
 import { LimitedMenuSection } from './components/sections/LimitedMenuSection';
 import { NewsSection } from './components/sections/NewsSection';
@@ -28,6 +29,7 @@ const App = () => {
     const [gachaActive, setGachaActive] = useState(false);
     const [calendarActive, setCalendarActive] = useState(false);
     const [postFormActive, setPostFormActive] = useState(false);
+    const [designActive, setDesignActive] = useState(false);
     const [modalImage, setModalImage] = useState(null);
 
     const handleNewsClick = (item) => {
@@ -40,7 +42,7 @@ const App = () => {
                 <EmberParticles />
 
                 <div className="w-full max-w-[540px] mx-auto relative z-10 shadow-[0_0_60px_rgba(0,0,0,0.3)]">
-                    <Header />
+                    <Header onDesignClick={() => setDesignActive(true)} />
                     <main>
                         <Hero />
 
@@ -117,6 +119,7 @@ const App = () => {
             <ToppingGacha active={gachaActive} onClose={() => setGachaActive(false)} />
             <CalendarModal active={calendarActive} onClose={() => setCalendarActive(false)} />
             <PostForm active={postFormActive} onClose={() => setPostFormActive(false)} />
+            <DesignGalleryModal active={designActive} onClose={() => setDesignActive(false)} onImageClick={setModalImage} />
             <ImageModal src={modalImage} onClose={() => setModalImage(null)} />
         </React.Fragment>
     );

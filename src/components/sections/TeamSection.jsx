@@ -7,6 +7,7 @@ const teamMembers = [
     { name: 'りとるん', role: 'デザイナー　盛り上げ隊', icon: './assets/icon_ritorun.jpg', xUrl: 'https://x.com/shimarito_0912', hoverColor: 'from-emerald-500 to-teal-500' },
     { name: '綿棒', role: '企画　運営サポート　マネージメント', icon: './assets/icon_menbou.jpg', xUrl: 'https://x.com/06MenBow04', hoverColor: 'from-amber-500 to-yellow-500' },
     { name: 'ままかりスター', role: '酒飲み　アドバイザー　繋ぎ役', icon: './assets/icon_mamakari.jpg', xUrl: 'https://x.com/mamakari_star', hoverColor: 'from-pink-500 to-rose-500' },
+    { name: 'かやや', role: 'クリプトニンジャ#5金鬼オーナー　運営サポート　にんぷち開発サポート', icon: './assets/icon_kayaya.jpg', xUrl: 'https://x.com/Kayaya_Yeah', hoverColor: 'from-yellow-500 to-red-500' },
 ];
 
 const hoverStyles = [
@@ -15,6 +16,7 @@ const hoverStyles = [
     { ring: 'rgba(50,200,150,0.35)', glow: 'rgba(50,200,150,0.2)', shadow: 'rgba(50,200,150,0.25)', name: 'text-emerald-300', border: 'border-emerald-400/50' },
     { ring: 'rgba(250,200,50,0.35)', glow: 'rgba(250,200,50,0.2)', shadow: 'rgba(250,200,50,0.25)', name: 'text-amber-300', border: 'border-amber-400/50' },
     { ring: 'rgba(236,72,153,0.35)', glow: 'rgba(236,72,153,0.2)', shadow: 'rgba(236,72,153,0.25)', name: 'text-pink-300', border: 'border-pink-400/50' },
+    { ring: 'rgba(255,180,50,0.35)', glow: 'rgba(255,180,50,0.2)', shadow: 'rgba(255,180,50,0.25)', name: 'text-yellow-300', border: 'border-yellow-400/50' },
 ];
 
 const useReveal = (delay = 0) => {
@@ -99,7 +101,11 @@ const MemberCard = ({ member, index }) => {
                         }}
                     >
                         <img src={member.icon} alt={member.name}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }} />
+                        <div className="w-full h-full bg-gradient-to-br from-[#3d1a1e] to-[#1e0a0c] items-center justify-center text-4xl font-bold text-white/50" style={{ display: 'none' }}>
+                            {member.name.charAt(0)}
+                        </div>
                         {/* ホバーカラーオーバーレイ */}
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"
                             style={{ background: `linear-gradient(135deg, ${style.glow}, transparent)` }}

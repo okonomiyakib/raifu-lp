@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { DesignGalleryButton } from './DesignGallerySection';
 
-export const Header = () => {
+export const Header = ({ onDesignClick }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -68,8 +69,11 @@ export const Header = () => {
 
                     <div className="flex-1"></div>
 
+                    {/* デザインボタン */}
+                    <DesignGalleryButton onClick={onDesignClick} />
+
                     <a href="https://x.com/SHACK_SAME_SAME?s=20" target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 bg-white/8 backdrop-blur-md rounded-lg pr-2 pl-0.5 py-0.5 text-[9px] text-white border border-white/10">
+                        className="flex items-center gap-1.5 bg-white/8 backdrop-blur-md rounded-lg pr-2 pl-0.5 py-0.5 text-[9px] text-white border border-white/10 ml-1.5">
                         <div className="w-5 h-5 rounded-md overflow-hidden">
                             <img src="./assets/shack.jpg" alt="Shack" className="w-full h-full object-cover" />
                         </div>
@@ -79,7 +83,7 @@ export const Header = () => {
                         </div>
                     </a>
 
-                    <div className="relative ml-2">
+                    <div className="relative ml-1.5">
                         <audio ref={audioRef} loop autoPlay>
                             <source src="./assets/ninket_cm.mp3" type="audio/mp3" />
                         </audio>
@@ -101,7 +105,7 @@ export const Header = () => {
                     </div>
 
                     <button onClick={() => setMenuOpen(!menuOpen)}
-                        className="w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-lg bg-white/8 border border-white/15 active:scale-95 transition-all hover:border-red-500/40 ml-2"
+                        className="w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-lg bg-white/8 border border-white/15 active:scale-95 transition-all hover:border-red-500/40 ml-1.5"
                         aria-label="メニュー">
                         <span className={`block w-5 h-[1.5px] bg-white rounded-full transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`}></span>
                         <span className={`block w-5 h-[1.5px] bg-white rounded-full transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
