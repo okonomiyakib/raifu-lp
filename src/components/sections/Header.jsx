@@ -36,8 +36,6 @@ export const Header = ({ onDesignClick }) => {
         { label: 'お知らせ', href: '#info' },
         { label: 'プロジェクト', href: '#activities' },
         { label: 'ゲーム', href: '#games' },
-        { label: 'ランキング', href: '#ranking' },
-        { label: '投稿', href: '#posts' },
         { label: 'チーム', href: '#team' },
     ];
 
