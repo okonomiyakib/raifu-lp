@@ -9,7 +9,7 @@ export const Hero = () => (
             <div className="w-full h-full bg-cover bg-center animate-ken-burns" style={{ backgroundImage: "url('./assets/hero.jpg')" }}></div>
         </div>
 
-        <div className="relative z-20 px-6 w-full max-w-[540px] mx-auto">
+        <div className="relative z-20 px-6 w-full max-w-[540px] sm:max-w-[640px] md:max-w-[720px] mx-auto">
             <div className="space-y-5">
                 <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <div className="inline-flex items-center gap-2 bg-[#2b1215]/60 backdrop-blur-md border border-red-500/30 rounded-lg px-3 py-1.5">

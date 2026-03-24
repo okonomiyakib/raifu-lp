@@ -4,7 +4,7 @@ import { ACTIVITIES_LINKS } from '../../data/constants';
 import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const ActivitiesSection = () => (
-    <section className="px-4 py-10 max-w-[540px] mx-auto">
+    <section className="px-4 sm:px-6 py-10 mx-auto">
         <ScrollReveal>
             <div className="section-header">
                 <div className="shu-accent"></div>

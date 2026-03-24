@@ -1,12 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════
-   来風 LP — RED BASE WARM THEME v5
+   来風 LP — RED BASE WARM THEME v6 — RESPONSIVE
    ═══════════════════════════════════════════════════════ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
 
@@ -438,11 +438,42 @@ canvas {
 }
 
 /* ═══════════════════════════════════════════════════════
-   Mobile
+   Responsive — モバイル (〜639px)
    ═══════════════════════════════════════════════════════ */
-@media (max-width: 540px) {
+@media (max-width: 639px) {
     html {
         font-size: 15px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Responsive — タブレット (640px〜1023px)
+   ═══════════════════════════════════════════════════════ */
+@media (min-width: 640px) and (max-width: 1023px) {
+    html {
+        font-size: 16px;
+    }
+
+    .section-header .title-en {
+        font-size: 1.75rem;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Responsive — デスクトップ (1024px〜)
+   ═══════════════════════════════════════════════════════ */
+@media (min-width: 1024px) {
+    html {
+        font-size: 17px;
+    }
+
+    .section-header .title-en {
+        font-size: 2rem;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(255, 60, 60, 0.15);
     }
 }
 

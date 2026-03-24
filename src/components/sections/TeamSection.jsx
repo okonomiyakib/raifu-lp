@@ -165,7 +165,7 @@ export const TeamSection = () => {
     }, []);
 
     return (
-        <section className="px-4 py-16 max-w-[540px] mx-auto relative">
+        <section className="px-4 sm:px-6 py-16 mx-auto relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div ref={headerRef}

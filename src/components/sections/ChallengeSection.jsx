@@ -18,14 +18,15 @@ const HankoStamp = ({ text, color = 'red' }) => (
     <div
         className={`inline-block border-2 rounded-lg px-2.5 py-1.5 font-black text-[10px] leading-tight text-center
             ${color === 'red' ? 'border-red-500 text-red-500 bg-red-500/10 shadow-md shadow-red-900/20' : ''}
-            ${color === 'blue' ? 'border-blue-400 text-blue-400 bg-blue-500/10 shadow-md shadow-blue-900/20' : ''}`}
+            ${color === 'blue' ? 'border-blue-400 text-blue-400 bg-blue-500/10 shadow-md shadow-blue-900/20' : ''}
+            ${color === 'green' ? 'border-emerald-400 text-emerald-400 bg-emerald-500/10 shadow-md shadow-emerald-900/20' : ''}`}
     >
         {text}
     </div>
 );
 
 export const ChallengeSection = () => (
-    <section className="px-4 py-10 max-w-[540px] mx-auto">
+    <section className="px-4 sm:px-6 py-10 mx-auto">
         <ScrollReveal>
             <div className="section-header">
                 <div className="shu-accent"></div>
@@ -45,14 +46,74 @@ export const ChallengeSection = () => (
 
                 <div className="mb-5 rounded-xl overflow-hidden border border-red-500/20 shadow-xl group">
                     <img src="./assets/game_challenge.jpg" alt="Game Challenge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="bg-[#381a1e] p-2.5 text-center text-xs text-white/70">おこビーを見つけてスクショを撮ろう！</div>
+                    <div className="bg-[#381a1e] p-2.5 text-center text-xs text-white/70">ゲームにチャレンジしてスクショをLINEに投稿しよう！</div>
                 </div>
 
                 <div className="space-y-4">
-                    {/* ═══ LV.1 - おこビー検索ミッション ═══ */}
+                    {/* ═══ LV.1 - CNPトレカアプリチャレンジ（NEW!） ═══ */}
+                    <div className="bg-white/[0.04] rounded-xl p-4 border border-emerald-500/20 relative">
+                        <div className="absolute -top-3 -left-1 flex items-center gap-2">
+                            <span className="bg-emerald-600 text-white text-sm font-black px-4 py-1 rounded-lg shadow-md inline-block transform -rotate-2 font-display tracking-wider">LV.1</span>
+                            <span className="bg-yellow-500 text-black text-[10px] font-black px-2 py-0.5 rounded-md shadow-md animate-pulse">NEW!</span>
+                        </div>
+                        <h4 className="text-base font-bold text-white mb-1 pt-3">🃏 CNPトレカで遊ぼう！</h4>
+                        {/* ゲーム説明 */}
+                        <p className="text-[11px] text-emerald-300/80 font-bold mb-2 tracking-wide">
+                            完全無料！ブラウザで遊べるトレーディングカードゲーム 🎴 CNPトレカ
+                        </p>
+                        <p className="text-sm text-white/65 mb-3 leading-relaxed">
+                            ブラウザで遊べるカードゲーム<span className="text-emerald-400 font-bold">『CNPトレカ』</span>にチャレンジ！<br />
+                            2つのモードで遊んで、お得な特典をゲットしよう 🎁
+                        </p>
+
+                        {/* ① CPU対戦チャレンジ */}
+                        <div className="bg-white/[0.03] border border-white/[0.08] rounded-lg p-3 mb-3">
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="bg-emerald-600/30 text-emerald-300 text-xs font-black px-2.5 py-1 rounded-md border border-emerald-500/30">①</span>
+                                <span className="text-white text-sm font-bold">CPU対戦チャレンジ</span>
+                            </div>
+                            <p className="text-sm text-white/60 leading-relaxed mb-2">
+                                『<span className="text-emerald-400 font-bold">CPU</span>』と対戦して、対戦中のスクリーンショットを下のLINEオープンチャットに貼ろう！
+                            </p>
+                            <div className="text-right">
+                                <span className="reward-sparkle" style={{ borderColor: 'rgba(52, 211, 153, 0.5)' }}>
+                                    <span className="reward-sparkle-text">🎁 店長おすすめトッピング 1つ無料！</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* ② 二人対戦チャレンジ */}
+                        <div className="bg-white/[0.03] border border-white/[0.08] rounded-lg p-3 mb-3">
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="bg-amber-600/30 text-amber-300 text-xs font-black px-2.5 py-1 rounded-md border border-amber-500/30">②</span>
+                                <span className="text-white text-sm font-bold">友達と二人で対戦チャレンジ</span>
+                            </div>
+                            <p className="text-sm text-white/60 leading-relaxed mb-2">
+                                「<span className="text-amber-400 font-bold">二人で対戦する</span>」を選んで友達と遊ぼう！<br />
+                                二人とも対戦中のスクショをオープンチャットに貼ってね 📸
+                            </p>
+                            <div className="text-right">
+                                <span className="reward-sparkle">
+                                    <span className="reward-sparkle-text">🏆 次回お好み焼き半額券プレゼント！</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* CNPトレカボタン - 炎エフェクト */}
+                        <div className="text-center my-3">
+                            <a href="https://tcg.kenty.app/" target="_blank" rel="noopener noreferrer"
+                                className="btn-flame inline-flex items-center gap-2 py-3 px-8 rounded-xl text-sm">
+                                🃏 『CNPトレカ』はこちら
+                            </a>
+                        </div>
+
+                        <HankoStamp text="📱 スマホでも遊べる！" color="green" />
+                    </div>
+
+                    {/* ═══ LV.2 - おこビー検索ミッション（旧LV.1） ═══ */}
                     <div className="bg-white/[0.04] rounded-xl p-4 border border-white/[0.06] relative">
                         <div className="absolute -top-3 -left-1">
-                            <span className="bg-red-600 text-white text-sm font-black px-4 py-1 rounded-lg shadow-md inline-block transform -rotate-2 font-display tracking-wider">LV.1</span>
+                            <span className="bg-red-600 text-white text-sm font-black px-4 py-1 rounded-lg shadow-md inline-block transform -rotate-2 font-display tracking-wider">LV.2</span>
                         </div>
                         <h4 className="text-base font-bold text-white mb-1 pt-3">おこビー検索ミッション</h4>
                         {/* ゲーム説明 */}
@@ -66,7 +127,7 @@ export const ChallengeSection = () => (
                         {/* ハンコ横並び */}
                         <div className="flex items-center justify-center gap-3 my-3">
                             <HankoStamp text="💡 ヒント！ステージ３" color="red" />
-                            <HankoStamp text="📱 高スペックのスマホだと&#10;クリアできる？かも？" color="blue" />
+                            <HankoStamp text={"📱 高スペックのスマホだと\nクリアできる？かも？"} color="blue" />
                         </div>
 
                         <div className="bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2 mb-3">
@@ -96,10 +157,10 @@ export const ChallengeSection = () => (
                         </div>
                     </div>
 
-                    {/* ═══ LV.2 - 甲賀ステージクリア ═══ */}
+                    {/* ═══ LV.3 - 甲賀ステージクリア（旧LV.2） ═══ */}
                     <div className="bg-white/[0.04] rounded-xl p-4 border border-white/[0.06] relative">
                         <div className="absolute -top-3 -left-1">
-                            <span className="bg-gradient-to-r from-red-600 to-red-500 text-white text-sm font-black px-4 py-1 rounded-lg shadow-md inline-block transform -rotate-2 font-display tracking-wider">LV.2</span>
+                            <span className="bg-gradient-to-r from-red-600 to-red-500 text-white text-sm font-black px-4 py-1 rounded-lg shadow-md inline-block transform -rotate-2 font-display tracking-wider">LV.3</span>
                         </div>
                         <h4 className="text-base font-bold text-white mb-1 pt-3">甲賀ステージクリア</h4>
                         {/* ゲーム説明 */}
@@ -139,7 +200,7 @@ export const ChallengeSection = () => (
                             </a>
                         </div>
 
-                        <p className="text-sm text-red-400 mb-3 text-center font-black">★ 両方クリアなら2枚ゲット！ ★</p>
+                        <p className="text-sm text-red-400 mb-3 text-center font-black">★ 全レベルクリアでさらにボーナス！ ★</p>
                         <div className="text-right">
                             <span className="reward-sparkle">
                                 <span className="reward-sparkle-text">🏆 報酬：肉玉そば半額券 1枚~</span>

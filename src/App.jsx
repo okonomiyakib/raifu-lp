@@ -38,7 +38,8 @@ const App = () => {
             <div id="top" className="page-bg min-h-screen text-[#fce8e8] font-sans relative">
                 <EmberParticles />
 
-                <div className="w-full max-w-[540px] mx-auto relative z-10 shadow-[0_0_60px_rgba(0,0,0,0.3)]">
+                {/* レスポンシブコンテナ：モバイルは全幅、タブレット以上は中央寄せ */}
+                <div className="w-full max-w-[540px] sm:max-w-[640px] md:max-w-[720px] lg:max-w-[800px] mx-auto relative z-10 shadow-[0_0_60px_rgba(0,0,0,0.3)]">
                     <Header onDesignClick={() => setDesignActive(true)} />
                     <main>
                         <Hero />

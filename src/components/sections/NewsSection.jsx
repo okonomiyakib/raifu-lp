@@ -13,7 +13,7 @@ const categoryColors = {
 };
 
 export const NewsSection = ({ onNewsClick }) => (
-    <section id="info" className="px-4 py-8 max-w-[540px] mx-auto">
+    <section id="info" className="px-4 sm:px-6 py-8 mx-auto">
         <ScrollReveal>
             <div className="flex items-center gap-2.5 mb-4">
                 <div className="w-[3px] h-6 bg-gradient-to-b from-red-400 to-transparent rounded-full shadow-[0_0_8px_rgba(255,80,80,0.3)]"></div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const NewSection = () => (
-    <section className="px-4 pb-8 pt-2 max-w-[540px] mx-auto relative z-20 -mt-8">
+    <section className="px-4 sm:px-6 pb-8 pt-2 mx-auto relative z-20 -mt-8">
         <ScrollReveal>
             <div className="card relative group rounded-2xl overflow-hidden shadow-xl">
                 <div className="absolute top-0 left-0 z-10">
