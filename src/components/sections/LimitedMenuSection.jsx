@@ -4,7 +4,7 @@ import { ScrollReveal } from '../ui/ScrollReveal';
 export const LimitedMenuSection = ({ onImageClick }) => {
     const mainMenuItems = [
         { id: 1, src: './assets/肉玉そば『極み』画像.PNG', alt: '肉玉そば『極』', price: '950円(税込)', badge: 'RECOMMEND', hasImage: true },
-        { id: 2, src: './assets/kaki_bakumori.jpg', alt: 'かき爆盛 たっぷり400g', price: '3,500円(税込)', badge: '冬季限定', hasImage: true },
+        { id: 7, src: null, alt: '『伝説の焼きそば』', price: '1,200円(税込)', badge: 'NEW', hasImage: false, emoji: '🍝', subtitle: '１４年越しに解禁！LP内限定で注文可能' },
         { id: 3, src: null, alt: '肉玉そば超肉まみれ', price: '1,550円(税込)', badge: 'NEW', hasImage: false, emoji: '🥩' },
         { id: 4, src: null, alt: '肉玉そばチーズまみれ', price: '1,350円(税込)', badge: 'NEW', hasImage: false, emoji: '🧀' },
         { id: 5, src: null, alt: '高血圧おこ', price: '1,350円(税込)', badge: '店長not推奨', hasImage: false, emoji: '🔥', subtitle: '※食べすぎ注意！' },
@@ -13,7 +13,6 @@ export const LimitedMenuSection = ({ onImageClick }) => {
 
     const sideMenuItems = [
         { id: 10, src: null, alt: '嫁泣かせタレ焼き', price: '750円(税込)', badge: 'NEW', hasImage: false, emoji: '😭' },
-        { id: 11, src: null, alt: '牛窓甘藍(うしまどかんらん)青唐辛子味噌', price: '550円(税込)', badge: 'NEW', hasImage: false, emoji: '🌶️' },
     ];
 
     const MenuCard = ({ item, isSide = false }) => (

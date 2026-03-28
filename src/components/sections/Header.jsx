@@ -70,14 +70,24 @@ export const Header = ({ onDesignClick }) => {
                     {/* デザインボタン */}
                     <DesignGalleryButton onClick={onDesignClick} />
 
+                    {/* Shack */}
                     <a href="https://x.com/SHACK_SAME_SAME?s=20" target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 bg-white/8 backdrop-blur-md rounded-lg pr-2 pl-0.5 py-0.5 text-[9px] text-white border border-white/10 ml-1.5">
+                        className="flex items-center gap-1.5 bg-white/8 backdrop-blur-md rounded-lg pr-2 pl-0.5 py-0.5 text-[9px] text-white border border-white/10 ml-1.5 shrink-0">
                         <div className="w-5 h-5 rounded-md overflow-hidden">
                             <img src="./assets/shack.jpg" alt="Shack" className="w-full h-full object-cover" />
                         </div>
                         <div className="flex flex-col leading-none">
                             <span className="text-[7px] text-red-400 font-display uppercase tracking-widest">Music</span>
                             <span className="font-bold">Shack</span>
+                        </div>
+                    </a>
+
+                    {/* 健ちゃん */}
+                    <a href="https://x.com/kabuco_h?s=20" target="_blank" rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 bg-white/8 backdrop-blur-md rounded-lg pr-2 py-0.5 pl-1.5 text-[9px] text-white border border-white/10 ml-1.5 shrink-0">
+                        <div className="flex flex-col leading-none">
+                            <span className="text-[7px] text-emerald-400 font-display uppercase tracking-widest">CNPトレカ開発</span>
+                            <span className="font-bold">健ちゃん</span>
                         </div>
                     </a>
 

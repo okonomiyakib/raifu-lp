@@ -65,6 +65,13 @@ export const SubscriptionTeaser = () => (
                         </div>
                     </div>
                     <div className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                        <span className="text-xl mt-0.5 shrink-0">😎</span>
+                        <div>
+                            <p className="text-white/90 text-sm font-bold">退店時顔パス🤩</p>
+                            <p className="text-white/40 text-xs mt-0.5">お会計不要でスムーズにご退店いただけます</p>
+                        </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                         <span className="text-xl mt-0.5 shrink-0">📅</span>
                         <div>
                             <p className="text-white/90 text-sm font-bold">月額定額制で安心</p>

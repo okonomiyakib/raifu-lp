@@ -44,10 +44,6 @@ export const ChallengeSection = () => (
                     </div>
                 </div>
 
-                <div className="mb-5 rounded-xl overflow-hidden border border-red-500/20 shadow-xl group">
-                    <img src="./assets/game_challenge.jpg" alt="Game Challenge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="bg-[#381a1e] p-2.5 text-center text-xs text-white/70">ゲームにチャレンジしてスクショをLINEに投稿しよう！</div>
-                </div>
 
                 <div className="space-y-4">
                     {/* ═══ LV.1 - CNPトレカアプリチャレンジ（NEW!） ═══ */}
@@ -56,15 +52,20 @@ export const ChallengeSection = () => (
                             <span className="bg-emerald-600 text-white text-sm font-black px-4 py-1 rounded-lg shadow-md inline-block transform -rotate-2 font-display tracking-wider">LV.1</span>
                             <span className="bg-yellow-500 text-black text-[10px] font-black px-2 py-0.5 rounded-md shadow-md animate-pulse">NEW!</span>
                         </div>
-                        <h4 className="text-base font-bold text-white mb-1 pt-3">🃏 CNPトレカで遊ぼう！</h4>
+                        <h4 className="text-base font-bold text-white mb-1 pt-3">🃏 CNPトレカアプリα２で遊ぼう！</h4>
                         {/* ゲーム説明 */}
                         <p className="text-[11px] text-emerald-300/80 font-bold mb-2 tracking-wide">
-                            完全無料！ブラウザで遊べるトレーディングカードゲーム 🎴 CNPトレカ
+                            完全無料！スマホでも遊べるトレーディングカードゲーム 🎴 CNPトレカアプリα２
                         </p>
                         <p className="text-sm text-white/65 mb-3 leading-relaxed">
-                            ブラウザで遊べるカードゲーム<span className="text-emerald-400 font-bold">『CNPトレカ』</span>にチャレンジ！<br />
+                            ブラウザで遊べるカードゲーム<span className="text-emerald-400 font-bold">『CNPトレカアプリα２』</span>にチャレンジ！<br />
                             2つのモードで遊んで、お得な特典をゲットしよう 🎁
                         </p>
+
+                        {/* CNPトレカアプリα２の写真 */}
+                        <div className="mb-4 rounded-xl overflow-hidden border border-emerald-500/15 shadow-lg">
+                            <img src="./assets/cnp_treca_alpha2.jpg" alt="CNPトレカアプリα２" className="w-full object-cover" />
+                        </div>
 
                         {/* ① CPU対戦チャレンジ */}
                         <div className="bg-white/[0.03] border border-white/[0.08] rounded-lg p-3 mb-3">
@@ -75,7 +76,7 @@ export const ChallengeSection = () => (
                             <p className="text-sm text-white/60 leading-relaxed mb-2">
                                 『<span className="text-emerald-400 font-bold">CPU</span>』と対戦して、対戦中のスクリーンショットを下のLINEオープンチャットに貼ろう！
                             </p>
-                            <div className="text-right">
+                            <div className="text-center">
                                 <span className="reward-sparkle" style={{ borderColor: 'rgba(52, 211, 153, 0.5)' }}>
                                     <span className="reward-sparkle-text">🎁 店長おすすめトッピング 1つ無料！</span>
                                 </span>
@@ -92,7 +93,7 @@ export const ChallengeSection = () => (
                                 「<span className="text-amber-400 font-bold">二人で対戦する</span>」を選んで友達と遊ぼう！<br />
                                 二人とも対戦中のスクショをオープンチャットに貼ってね 📸
                             </p>
-                            <div className="text-right">
+                            <div className="text-center">
                                 <span className="reward-sparkle">
                                     <span className="reward-sparkle-text">🏆 次回お好み焼き半額券プレゼント！</span>
                                 </span>
@@ -103,7 +104,7 @@ export const ChallengeSection = () => (
                         <div className="text-center my-3">
                             <a href="https://tcg.kenty.app/" target="_blank" rel="noopener noreferrer"
                                 className="btn-flame inline-flex items-center gap-2 py-3 px-8 rounded-xl text-sm">
-                                🃏 『CNPトレカ』はこちら
+                                🃏 『CNPトレカα２』はこちら
                             </a>
                         </div>
 
@@ -123,6 +124,11 @@ export const ChallengeSection = () => (
                         <p className="text-sm text-white/65 mb-3 leading-relaxed">
                             ブラウザゲーム<span className="text-red-400 font-bold">『にんぷち』</span>の中で、お好み焼きを持った「おこビー」のスクショを撮ってLINEに投稿！
                         </p>
+
+                        <div className="mb-5 rounded-xl overflow-hidden border border-red-500/20 shadow-xl group">
+                            <img src="./assets/game_challenge.jpg" alt="Game Challenge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div className="bg-[#381a1e] p-2.5 text-center text-xs text-white/70">ゲームにチャレンジしてスクショをLINEに投稿しよう！</div>
+                        </div>
 
                         {/* ハンコ横並び */}
                         <div className="flex items-center justify-center gap-3 my-3">
@@ -150,7 +156,7 @@ export const ChallengeSection = () => (
                             <span className="text-amber-300 text-sm font-bold">💻 にんぷちは PC推奨</span>
                         </div>
 
-                        <div className="text-right">
+                        <div className="text-center">
                             <span className="reward-sparkle">
                                 <span className="reward-sparkle-text">🏆 報酬：肉玉そば半額券 1枚</span>
                             </span>
@@ -165,7 +171,7 @@ export const ChallengeSection = () => (
                         <h4 className="text-base font-bold text-white mb-1 pt-3">甲賀ステージクリア</h4>
                         {/* ゲーム説明 */}
                         <p className="text-[11px] text-amber-300/80 font-bold mb-2 tracking-wide">
-                            完全無料！タワーディフェンス系ゲームアプリ 🏰 CNPバーニンウォーズ
+                            完全無料！スマホでも遊べるタワーディフェンス系ゲームアプリ 🏰 CNPバーニンウォーズ
                         </p>
                         <p className="text-sm text-white/65 mb-3 leading-relaxed">
                             <span className="text-red-400 font-bold">甲賀ステージクリア</span>がわかるスクショをLINEに投稿！
@@ -201,7 +207,7 @@ export const ChallengeSection = () => (
                         </div>
 
                         <p className="text-sm text-red-400 mb-3 text-center font-black">★ 全レベルクリアでさらにボーナス！ ★</p>
-                        <div className="text-right">
+                        <div className="text-center">
                             <span className="reward-sparkle">
                                 <span className="reward-sparkle-text">🏆 報酬：肉玉そば半額券 1枚~</span>
                             </span>
