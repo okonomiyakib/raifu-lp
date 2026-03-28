@@ -63,8 +63,10 @@ export const ChallengeSection = () => (
                         </p>
 
                         {/* CNPトレカアプリα２の写真 */}
-                        <div className="mb-4 rounded-xl overflow-hidden border border-emerald-500/15 shadow-lg">
-                            <img src="./assets/cnp_treca_alpha2.jpg" alt="CNPトレカアプリα２" className="w-full object-cover" />
+                        <div className="mb-4 flex justify-center">
+                            <div className="w-[60%] sm:w-[50%] rounded-xl overflow-hidden border border-emerald-500/20 shadow-lg bg-black/20">
+                                <img src="./assets/cnp_treca_alpha2.jpg" alt="CNPトレカアプリα２" className="w-full h-auto object-contain" />
+                            </div>
                         </div>
 
                         {/* ① CPU対戦チャレンジ */}
