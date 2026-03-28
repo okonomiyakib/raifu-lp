@@ -62,12 +62,7 @@ export const ChallengeSection = () => (
                             2つのモードで遊んで、お得な特典をゲットしよう 🎁
                         </p>
 
-                        {/* CNPトレカアプリα２の写真 */}
-                        <div className="mb-4 flex justify-center">
-                            <div className="w-[60%] sm:w-[50%] rounded-xl overflow-hidden border border-emerald-500/20 shadow-lg bg-black/20">
-                                <img src="./assets/cnp_treca_alpha2.jpg" alt="CNPトレカアプリα２" className="w-full h-auto object-contain" />
-                            </div>
-                        </div>
+
 
                         {/* ① CPU対戦チャレンジ */}
                         <div className="bg-white/[0.03] border border-white/[0.08] rounded-lg p-3 mb-3">
